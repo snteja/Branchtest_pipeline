@@ -1,0 +1,13 @@
+---
+- name: Create dir
+  hosts: all
+  tasks:
+  - name: Creating dir
+    file:
+     name: /tmp/teja
+     state: directory
+     register: results
+  - name: Display o/p results
+    debug:
+     vars: results
+...

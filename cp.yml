@@ -1,0 +1,9 @@
+---
+- name: copy file
+  hosts: all
+  tasks:
+  - name: copy teja file
+    copy:
+     src: /home/ubuntu/teja.txt
+     dest: /home/ubuntu
+...

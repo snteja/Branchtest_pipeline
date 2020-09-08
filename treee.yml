@@ -1,0 +1,10 @@
+---
+- name: Implementing global variables
+  hosts: all
+  tasks:
+  - name: 
+     apt:
+      name: "{{a}}"
+      state: "{{b}}"
+      update_cache: "{{c}}"
+...

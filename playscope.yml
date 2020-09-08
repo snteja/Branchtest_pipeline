@@ -1,0 +1,14 @@
+---
+- name: Using play scope variables
+  hosts: all
+  vars:
+   a: git
+   b: absent
+   c: no
+  tasks:
+  - name: Uninstall git package
+    apt:
+     name: "{{a}}"
+     state: "{{b}}"
+     update_cache: "{{c}}"
+...

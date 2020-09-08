@@ -1,0 +1,10 @@
+---
+- name: Using host scope variables
+  hosts: 172.31.28.166
+  tasks:
+  - name: Install apache2
+    apt:
+     name: "{{a}}"
+     state: "{{b}}"
+     update_cache: "{{c}}"
+...

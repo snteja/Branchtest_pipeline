@@ -1,0 +1,9 @@
+---
+- name: Creating dirs and coping files
+  hosts: all
+  tasks:
+   - name: create directory
+     file:
+      name: /home/ubuntu/dir1
+      state: directory
+...

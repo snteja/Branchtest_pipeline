@@ -1,0 +1,9 @@
+---
+- name: Fetch file
+  hosts: 172.31.28.166
+  tasks:
+  - name: fetch dockerfile
+    fetch:
+     src: /home/ubuntu/docker/dockerfile
+     dest: /home/ubuntu
+...

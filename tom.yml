@@ -1,0 +1,9 @@
+---
+- name: Get devops file
+  hosts: 172.31.36.235
+  tasks:
+  - name: Download war file
+    fetch:
+     src: /var/lib/jenkins/workspace/First job/target/DevOpsRocks.war
+     dest: /home/ubuntu/jenkins
+...

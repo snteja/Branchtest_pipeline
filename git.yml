@@ -1,0 +1,9 @@
+---
+- name: git download
+  hosts: all
+  tasks:
+  - name: download repo
+    git:
+     repo: https://github.com/snteja/DevOps-Project.git
+     dest: /home/ubuntu/git
+...
