@@ -1,0 +1,21 @@
+#Looping in Ansible can be done with_items. A single module can be made to  run multiple times with multiple sets of data.
+---
+- name: Implementing Loops
+  hosts: all
+  become: yes
+  tasks:
+   - name: INstall packages
+     apt:
+      name: "{{ item }}"
+      state: present
+      update_cache: yes
+     with_items:
+      - maven
+      - openjdk-8-jdk
+      - git
+      - firewalld
+      - mongodb
+      - postgres
+      - apache2
+      - nginx
+

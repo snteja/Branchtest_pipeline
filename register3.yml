@@ -1,0 +1,11 @@
+- name: Register3 example
+  hosts: node1
+  become: True
+  tasks:
+    - name: List directory contents
+      shell: ls /root/test3
+      register: contents
+    - name: Check if directory is empty
+      debug:
+        msg: "Directory is empty."
+      when: contents.stdout == ""

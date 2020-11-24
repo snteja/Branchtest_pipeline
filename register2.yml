@@ -1,0 +1,10 @@
+- hosts: all
+  become: True
+  tasks:
+    - name: List all files and directories in /root
+      shell: ls /root
+      register: dir_contents
+    - name: Print directory contents using loops
+      debug:
+        msg: "{{ item }}"
+      loop: "{{ dir_contents.stdout_lines }}"

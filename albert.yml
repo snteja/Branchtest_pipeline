@@ -1,0 +1,22 @@
+---
+- name: My web page
+  hosts: all
+  become: yes
+  tasks:
+   - name: Nginx Installation
+     apt:
+      name: apache2
+      state: present
+      update_cache: yes
+    
+   - name: Modify apache2 webpage
+     copy:
+      src: albert.html
+      dest: /var/www/html/index.html
+     notify:
+      - restart apache2
+
+  handlers:
+   - name: restart apache2
+     command: service apache2 restart
+

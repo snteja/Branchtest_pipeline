@@ -1,0 +1,25 @@
+---
+- name: Apache2 Installation
+  hosts: all
+  become: yes
+  tasks:
+   - name: Install Apache2
+     apt:
+      name: apache2
+      state: present
+      update_cache: yes
+     tags:
+      - package
+
+   - name: Copy albert html
+     copy:
+      src: albert.html
+      dest: /var/www/html/index.html
+     notify:
+      - restart apache2
+     tags:
+      - copy
+  
+  handlers:
+   - name: restart apache2
+     command: service apache2 restart
